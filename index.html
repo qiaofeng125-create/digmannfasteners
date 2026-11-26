@@ -863,7 +863,11 @@
                         </div>
                     </div>
                 </div>
-                <form class="quote-form" id="quoteForm">
+                <form class="quote-form" id="quoteForm" action="https://formsubmit.co/sales21@digmannfasteners.com" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" id="rfqSubject" value="RFQ from digmannfasteners.com">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://digmannfasteners.com/?submitted=1">
                     <div class="form-row">
                         <div class="form-group"><label for="fName">Name *</label><input id="fName" name="name" required></div>
                         <div class="form-group"><label for="fEmail">Email *</label><input id="fEmail" name="email" type="email" required></div>
@@ -881,6 +885,7 @@
                         <div class="form-group"><label for="fQty">Quantity</label><input id="fQty" name="qty" placeholder="e.g. 20.000 pcs / 1x20'GP"></div>
                     </div>
                     <div class="form-group"><label for="fMsg">Specification / drawing notes *</label><textarea id="fMsg" name="message" required placeholder="Size, grade, finish, standard or drawing number..."></textarea></div>
+                    <div class="form-group"><label for="fFile">Attach your RFQ sheet / drawing (PDF, Excel, images)</label><input id="fFile" name="attachment" type="file" accept=".pdf,.xlsx,.xls,.doc,.docx,.jpg,.jpeg,.png,.dxf" multiple></div>
                     <button type="submit" class="btn btn-primary" style="width:100%">Send RFQ &#8594;</button>
                     <p class="form-note">Opens your email app pre-filled to sales21@digmannfasteners.com. Drawings can be attached there, or sent straight to the address / WhatsApp.</p>
                 </form>
@@ -1008,18 +1013,8 @@
 
         // Form -> real mailto (works without backend)
         document.getElementById('quoteForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const d = Object.fromEntries(new FormData(e.target));
-            const subject = encodeURIComponent('RFQ: ' + (d.product || 'fasteners') + (d.qty ? ' - ' + d.qty : ''));
-            const body = encodeURIComponent(
-                'Hello Digmann Fasteners team,\n\n' +
-                'Product: ' + (d.product || '-') + '\n' +
-                'Quantity: ' + (d.qty || '-') + '\n' +
-                'Specification:\n' + (d.message || '') + '\n\n' +
-                'Regards,\n' + (d.name || '-') + '\n' + (d.email || '') +
-                '\n\n(I can attach the drawing to this email.)'
-            );
-            window.location.href = 'mailto:sales21@digmannfasteners.com?subject=' + subject + '&body=' + body;
+            const d = new FormData(e.target);
+            document.getElementById('rfqSubject').value = 'RFQ: ' + (d.get('product') || 'fasteners') + (d.get('qty') ? ' - ' + d.get('qty') : '');
         });
 
         // No-JS / old-browser safe: cards are visible by default; only hover transitions apply.
