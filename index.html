@@ -234,7 +234,16 @@
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
         .form-group textarea { resize: vertical; min-height: 130px; }
         .form-note { font-size: 13px; color: var(--text-light); margin: 10px 0 6px; }
-        .form-boost { background: #eef4fd; border: 1px solid #c9dcf5; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #1e3a8a; line-height: 1.7; margin-top: 12px; }
+        .form-boost { background: #eef4fd; border: 1px solid #c9dcf5; border-left: 3px solid var(--accent); border-radius: 8px; padding: 16px 18px; font-size: 14px; color: #1e3a8a; line-height: 1.8; margin-top: 12px; }
+        .form-boost .boost-title { font-size: 15.5px; font-weight: 800; margin-bottom: 6px; }
+        .form-boost .boost-line { display: flex; gap: 8px; margin-top: 4px; }
+        .form-boost .boost-line span:first-child { color: var(--accent); font-weight: 700; }
+        .inbox-card { background: #eef4fd; border: 1px solid #c9dcf5; border-radius: 8px; padding: 14px 16px; margin-top: 12px; }
+        .person-card { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; margin-top: 12px; }
+        .person-card .p-head strong { font-size: 15.5px; color: var(--text-dark); }
+        .person-card .p-role { color: var(--primary); font-weight: 600; margin-left: 8px; font-size: 14.5px; }
+        .person-card .p-focus { font-size: 13.5px; color: var(--text-light); font-style: italic; margin: 5px 0 8px; }
+        .person-card .p-mail { font-size: 14.5px; }
 
         /* Footer */
         .footer { background: #f7f9fc; color: #334155; padding: 64px 0 26px; border-top: 1px solid var(--border); }
@@ -840,18 +849,24 @@
                         <div class="contact-icon">&#9993;</div>
                         <div class="contact-item-content">
                             <h4>General Sales Inbox &mdash; All New Inquiries</h4>
-                            <p>&#128233; <a href="mailto:sales@digmannfasteners.com">sales@digmannfasteners.com</a><br>
-                                <small>All new RFQs will be assigned to the relevant specialist promptly.</small></p>
+                            <div class="inbox-card">&#128233; <a href="mailto:sales@digmannfasteners.com"><strong>sales@digmannfasteners.com</strong></a><br>
+                                <small>All new RFQs will be assigned to the relevant specialist promptly.</small></div>
                             <h4 style="margin-top:22px;">Direct Contacts &mdash; Ongoing Projects &amp; Established Customers</h4>
-                            <p style="margin-top:10px;"><strong>David Lv</strong> | Sales Director &amp; Project Manager<br>
-                                <small><em>Large projects, PPAP, special specifications, key accounts</em></small><br>
-                                &#128233; <a href="mailto:davidlv@digmannfasteners.com">davidlv@digmannfasteners.com</a></p>
-                            <p style="margin-top:14px;"><strong>Lora Zhao</strong> | Sales Specialist<br>
-                                <small><em>Quotation, samples, order follow-up</em></small><br>
-                                &#128233; <a href="mailto:sales21@digmannfasteners.com">sales21@digmannfasteners.com</a></p>
-                            <p style="margin-top:14px;"><strong>Sally Hu</strong> | Sales Specialist<br>
-                                <small><em>Stock parts, shipping &amp; document support</em></small><br>
-                                &#128233; <a href="mailto:sales22@digmannfasteners.com">sales22@digmannfasteners.com</a></p>
+                            <div class="person-card">
+                                <div class="p-head"><strong>David Lv</strong><span class="p-role">| Sales Director &amp; Project Manager</span></div>
+                                <div class="p-focus">Large projects, PPAP, special specifications, key accounts</div>
+                                <div class="p-mail">&#128233; <a href="mailto:davidlv@digmannfasteners.com">davidlv@digmannfasteners.com</a></div>
+                            </div>
+                            <div class="person-card">
+                                <div class="p-head"><strong>Lora Zhao</strong><span class="p-role">| Sales Specialist</span></div>
+                                <div class="p-focus">Quotation, samples, order follow-up</div>
+                                <div class="p-mail">&#128233; <a href="mailto:sales21@digmannfasteners.com">sales21@digmannfasteners.com</a></div>
+                            </div>
+                            <div class="person-card">
+                                <div class="p-head"><strong>Sally Hu</strong><span class="p-role">| Sales Specialist</span></div>
+                                <div class="p-focus">Stock parts, shipping &amp; document support</div>
+                                <div class="p-mail">&#128233; <a href="mailto:sales22@digmannfasteners.com">sales22@digmannfasteners.com</a></div>
+                            </div>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -902,7 +917,13 @@
                     <div class="form-group"><label for="fFile">Attach your RFQ sheet / drawing (PDF, Excel, images)</label><input id="fFile" name="attachment" type="file" accept=".pdf,.xlsx,.xls,.doc,.docx,.jpg,.jpeg,.png,.dxf" multiple></div>
                     <button type="submit" class="btn btn-primary" style="width:100%">Send RFQ &#8594;</button>
                     <p class="form-note">Submits securely — every RFQ lands in our inbox with your attachments, reply within 24 h. Prefer direct? <a href="mailto:sales@digmannfasteners.com" style="color:var(--accent);">sales@digmannfasteners.com</a></p>
-                    <div class="form-boost">&#128172; Specs not 100% final? Send what you have &mdash; a rough idea, a sample photo or a work-in-progress drawing. You&rsquo;ll get a quote, lead time and manufacturing advice within 24 h, and we&rsquo;ll help you lock the details. Trial orders welcome: several of our longest partnerships started with a single small RFQ.</div>
+                    <div class="form-boost">
+                        <div class="boost-title">Specs not 100% final? Send what you have.</div>
+                        <div>A rough idea, a sample photo or a work-in-progress drawing is enough to get started:</div>
+                        <div class="boost-line"><span>&#10003;</span><span>Quote + lead time + manufacturing advice within 24 h</span></div>
+                        <div class="boost-line"><span>&#10003;</span><span>We help you lock the details &mdash; step by step</span></div>
+                        <div class="boost-line"><span>&#10003;</span><span>Trial orders welcome; several of our longest partnerships started with a single small RFQ</span></div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -939,11 +960,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:sales@digmannfasteners.com">sales@digmannfasteners.com</a> &mdash; General Inbox</li>
-                        <li><a href="mailto:davidlv@digmannfasteners.com">davidlv@digmannfasteners.com</a> &mdash; David Lv</li>
-                        <li><a href="mailto:sales21@digmannfasteners.com">sales21@digmannfasteners.com</a> &mdash; Lora Zhao</li>
-                        <li><a href="mailto:sales22@digmannfasteners.com">sales22@digmannfasteners.com</a> &mdash; Sally Hu</li>
-                        <li><a href="https://wa.me/8613611783573">WhatsApp +86 136 1178 3573</a></li>
-                        <li><a href="tel:+16282368606">Phone +1 628 236 8606 (US)</a></li>
+                        <li><a href="#contact">Full contacts &amp; direct sales &uarr;</a></li>
                         <li><a href="https://www.linkedin.com/company/digmannproducts" target="_blank" rel="noopener">LinkedIn</a></li>
                         <li>Shanghai, China</li>
                     </ul>
