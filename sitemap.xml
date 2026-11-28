@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://digmannfasteners.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://digmannfasteners.com/custom-fasteners/</loc><priority>0.9</priority></url>
+  <url><loc>https://digmannfasteners.com/bolts/</loc><priority>0.8</priority></url>
+  <url><loc>https://digmannfasteners.com/studs-threaded-rod/</loc><priority>0.7</priority></url>
+  <url><loc>https://digmannfasteners.com/washers-nuts/</loc><priority>0.7</priority></url>
+  <url><loc>https://digmannfasteners.com/anchor-fasteners/</loc><priority>0.7</priority></url>
+  <url><loc>https://digmannfasteners.com/non-standard-inch-thread/</loc><priority>0.9</priority></url>
+  <url><loc>https://digmannfasteners.com/din-ansi-cross-reference/</loc><priority>0.8</priority></url>
 </urlset>
